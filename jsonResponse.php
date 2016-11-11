@@ -19,7 +19,7 @@ class jsonResponse
       // formato json
       header('Content-Type: application/json');
       // mostramos el json
-      echo json_encode($this->data);
+      return json_encode($this->data);
   }
 }
 

@@ -20,12 +20,7 @@ class BD
   function __construct()
   {
     $this->conn= mysqli_connect($this->host, $this->user, $this->pw, $this->bd);
-    if (!$this->conn) {
-        echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-        echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-        echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-        exit;
-    }
+    if(!$this->conn) $this->error = "errno de depuración: " . mysqli_connect_errno();
   }
 
   function getEmpresas(){
